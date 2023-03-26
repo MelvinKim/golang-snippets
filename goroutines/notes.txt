@@ -1,0 +1,38 @@
+Types of schedulers:
+- preemptive schedulers vs non-preemptive schedulers
+
+processes vs threads
+context switch
+priority in Operating systems
+multithreaded software development --> more threads, means more load on the Operating system scheduler
+more scheduling decisions --> more context switching decisions
+
+multi-core processors
+concurrency --> managing a lot of things at once
+parallelism --> doing a lot of things at once
+"threads in runnable states, with cores that were idle, leading to threads not being scheduled"
+"throwing more cores to a problem, does not make things faster, if you don't understand the mechanical sympathy under the hood"
+
+thread pooling --> find how this is implemented in LINUX ???
+what's the maximum number of threads that give us the best throughput ??
+
+run queues | thread run queues
+types of workloads:
+1. CPU bound 
+  threads are not gonna move from a "running" into a "waiting" state - because they are not going to be asking for anything I/O related
+  if you have CPU bound work, having more threads than there are cores - will cause more pain that good - 
+  because the context switch adds pure latency
+2. I/O bound
+  threads move from "running" state to "waiting" state, from "waiting" state to "runnable" then to "running" and so on
+  eg database calls, DISK I/O
+  for these kind of tasks, having more threads than cores can be really great - because
+  as the threads move from "running" to "waiting" state, a core becomes available - we wanna keep the cores as busy as possible
+
+threads states:
+1. executing | running
+2. runnable
+3. waiting
+
+Go scheduler
+- Go scheduler manages the thread pools for us.
+

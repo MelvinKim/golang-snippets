@@ -1,0 +1,11 @@
+Go scheduler
+- Golang scheduler manages the thread pools for us.
+- when a Golang program, starts up, it's given a logical processor that we call "P"
+- data structures used:
+  1. Global run queue
+  2. Local run queue (every "P" has Local run queue)
+
+a goroutines can be in any of the following states:
+1. running | executing
+2. runnable
+3. waiting
