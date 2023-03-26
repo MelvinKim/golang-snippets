@@ -1,11 +1,35 @@
 Go scheduler
 - Golang scheduler manages the thread pools for us.
-- when a Golang program, starts up, it's given a logical processor that we call "P"
+- when a Golang program, starts up, it's given a logical processor that we call "P" - you get a single "P" per CPU core
 - data structures used:
   1. Global run queue
   2. Local run queue (every "P" has Local run queue)
+- when the main Go program starts up, it creates the main goroutine
 
 a goroutines can be in any of the following states:
 1. running | executing
 2. runnable
 3. waiting
+
+the processor can be switched into two modes:
+1. kernel mode
+  tells the processor, that whatever code, is currently executing it can do whatever it wants
+  eg drivers run in kernel mode
+2. user mode - the Go scheduler runs in the user mode
+  all Go code executes in user mode - puts the processor in a protected mode.
+  "this code is not allowed to do whatever it wants"
+
+NB: 
+- since the Go scheduler runs in "user mode", it is not a preemptive scheduler, but a cooperating scheduler
+  this means that the application developer, has to do the cooperation --> the developer makes decisions
+- Golang changed the game, when dealing with the "cooperating scheduler" , because it is not the developer
+  who is having to cooperate, the Go scheduler is doing all the cooperation
+- the Golang scheduler is a preemptive scheduler, because when all things are equal, you have no clue, what the Go
+  scheduler is going to do. :)  :) :) - it's is as undeterministic as that operating system scheduler is :) --> technically
+  cooperating, but it has the semantics of a preemptive scheduler.
+- because the Golang scheduler is undeterministic, you have to control it. -> synchronization and orchestration
+
+network pooler data structure ???? Research more
+
+how to create goroutines:
+- using the "go" keyword
