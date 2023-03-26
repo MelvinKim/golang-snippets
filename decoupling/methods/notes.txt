@@ -1,0 +1,21 @@
+Methods vs functions 
+- methods have receiver arguments between the keyword "func" and the function name
+
+NB:
+- If you are using in built types eg strings, numerics, bool , even values in a struct --> use value receivers
+    1. exception, when dealing with a struct that's interacting with a DB --> YOU have unmarshall DB values to a struct
+- value receivers for reference types
+    1. exception --> when dealing with slice and maps, when sharing them down the callstack or to and function with named "DECODE" |
+    "UNMARSHALL"
+- struct types --> can take both, value receivers and pointer receivers
+
+NB:
+- Value receivers, helps us keep the memory heap free, which improves performance
+
+NB: 
+- Factory functions ???
+
+NB: 
+- initially intrface types are value less --> when interfaces are set to their zero values
+- semantics vs mechanics
+- iTable ??

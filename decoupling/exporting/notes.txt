@@ -1,0 +1,17 @@
+- a folder is the smallest unit of compilation
+- package names should be the same as the folder names
+- In Go, variables are exported if Capitalized
+
+Look into OOP design principles:
+1. DRY
+2. KISS
+3.YAGNI etc
+
+NOTES:
+* Declare types that represent something new or unique
+* validate that a value of any type is created or used on it's own
+* Embed types to reuse existing behaviors you need to satisfy.
+* Question types whose sole purpose is to share common state
+
+TEST COVERAGE: 
+- 70 - 80% Test coverage

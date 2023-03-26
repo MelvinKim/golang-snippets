@@ -1,0 +1,30 @@
+Go does not have classes
+method vs function
+- a method is a function with a special receiver argument (pointer receiver vs value receiver)
+
+NB:
+- a method is just a function with a receiver argument (a method is just a function, the only difference is the receiver argument)
+
+NB:
+- You can only declare a method with a receiver whose type is defined in the same package as the method
+- You cannot declare a method with a receiver whose type is defined in another package
+
+Types of receivers:
+1. Value receivers
+operates on a copy of the original value.
+2. Pointer receivers
+methods with pointer receivers can modify the value to which the receiver points
+
+Choosing between a value or pointer receiver:
+- Reasons to use a pointer receiver:
+1. so that you can MODIFY | CHANGE the value that its receiver points to
+2. to AVOID COPYING the value on each method call --> can be more efficint if the receiver is a large struct, for example.
+
+NB:
+- In general, all methods on a given type should have either value or pointer receiver, but not a mixture of both.
+
+NB:
+- functions with a pointer argument must take a pointer
+var v Vertex
+ScaleFunc(v, 5)  // Compile error!
+ScaleFunc(&v, 5) // OK

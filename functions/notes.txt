@@ -1,0 +1,2 @@
+Pass by value:
+- When you pass an array, between functions, they are array values are passed as a copy

@@ -1,0 +1,47 @@
+interface type: 
+- An interface type is defined as a set of method signatures
+- An interface is a Protocol - a Contract
+- It's an abstract type --> does not have any implementation --> only describes the expected behaviour
+- An interface decouples the types from each other
+- A value of type interface can hold any value that implements those methods. (methods defined in the interface)
+
+NB:
+- abstract types vs concerete types
+- abstract examples are interfaces, concerete examples examples are int, strings, float64, float32, slices, maps, channels etc
+- all other types in Go are concerete types except the interface type
+
+NB:
+- A type can only satisfy an interface, when it implements ALL ITS METHODS.
+
+NB:
+- THE BIGGER INTERFACE, THE WEAKER THE ABSTRACTION.
+
+NB: 
+- Interfaces only describes the expected behaviour and does not care where the behaviour comes from
+
+NB:
+- A type implements an interface by implementing its methods
+- There's no explicit declaration of intent, no "implements"keyword
+
+Interface values 
+- interface values can be thought of as a TUPLE of a value and concerete type
+  (value, type)
+- An interface value holds a value of a specific underlying concrete type.
+
+Empty interface
+- The interface type that specificies zero methods, is known as the EMPTY INTERFACE 
+  interface {}
+- An empty interface may hold values of any TYPE.
+  interface == (VALUE, TYPE)
+- Every type implements at least zero methods
+- Empty type interfaces are used by code that handles values of unknown type
+  for example, "fmt.Print" takes any number of arguments of type interface{}
+
+
+NB:
+- A nil interface value holds neither value nor concrete type.
+- Calling a method on a nil interface is a runtime error because there is no type inside the interface type (VALUE, TYPE) 
+  to indicate which concerete method to call. 
+
+NB:
+- An interface value that holds a nil concerete value is itself non-nil.

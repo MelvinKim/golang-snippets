@@ -1,0 +1,25 @@
+Melvin Kimathi Backend Software Engineer
+
+Elements of a Postcode
+
+The first part of the Postcode e.g. PO1 is called the outward code as it identifies the town or district to which the letter is to be sent for further sorting.
+
+The second part of the postcode e.g. 1EB is called the inward code.
+
+This identifies the particular sector in the town or district to which the letter has been delivered and a thoroughfare, part of a thoroughfare or an individual address within that sector. The maximum number of delivery points covered by one postcode is 100 and the average is 15.
+
+
+Postcode Area
+This is the largest geographical unit of the postcode.
+Each one comprises one or two alpha characters generally chosen to be a mnemonic of the area e.g. MK for Milton Keynes, SO for Southampton. There are currently 124 Postcode areas including Guernsey (GY) Jersey (JE) and the Isle of Man (IM).
+
+
+Postcode District
+Each postcode area is divided into a number of districts which are represented by the numerical portion of each part of the postcode.
+These numbers range from 0 to 99 e.g. MK42. In London a further alpha character is used to divide some districts into sub divisions e.g. EC1A.
+
+
+Postcode sectors
+Sectors are numbered 1,2,3,4,5,6,7,8,9,0.
+It should be noted that when sorting postcodes into order, sector 0 is the tenth sector rather than the first.
+
